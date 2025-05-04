@@ -1,4 +1,6 @@
 import 'package:fcm/ui/home_screen/home_screen.dart';
+import 'package:fcm/util/fcm_service.dart';
+import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'firebase_options.dart';
@@ -8,7 +10,9 @@ Future<void> main() async {
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
-  runApp(const MyApp());
+  FcmService service=FcmService();
+  await service.initFirebaseFCM();
+ runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
