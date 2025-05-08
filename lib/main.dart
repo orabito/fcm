@@ -12,6 +12,7 @@ Future<void> main() async {
   );
   FcmService service=FcmService();
   await service.initFirebaseFCM();
+
  runApp(const MyApp());
 }
 
@@ -29,4 +30,3 @@ class MyApp extends StatelessWidget {
   }
 }
 
-//do

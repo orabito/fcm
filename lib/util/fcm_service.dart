@@ -7,9 +7,9 @@ class FcmService {
       alert: true,
       announcement: false,
       badge: true,
-      carPlay: false,
-      criticalAlert: false,
-      provisional: false,
+      carPlay: true,
+      criticalAlert: true,
+      provisional: true,
       sound: true,
     );
     print('User granted permission: ${settings.authorizationStatus}');
@@ -35,7 +35,8 @@ class FcmService {
     });
 
 //backgroundMassage
-    FirebaseMessaging.onBackgroundMessage(_firebaseMessagingBackgroundHandler);
+
+
 
   }
   @pragma('vm:entry-point')
